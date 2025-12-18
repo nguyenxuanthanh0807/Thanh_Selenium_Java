@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <groups>
+        <run>
+            <include name="smoke"/>
+            <include name="Regresstion"/>
+        </run>
+
+    </groups>
+    <test verbose="2" preserve-order="true" name="F:/Selenium/Thanh_Selenium_Java/src/test/java/Buoi_14/Login_TestNG_Group.java">
+        <classes>
+    <class name="Buoi_14.Login_TestNG_Group"><methods>
+        <include name="smoke"/></methods>
+    </class>
+        </classes>
+    </test>
+</suite>
