@@ -21,7 +21,7 @@ public class Login_TestNG_Priority {
     @BeforeMethod(alwaysRun = true)
     public void setup(){
         driver = new ChromeDriver();
-        driver.manage().window();
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); //Truy cập tranh web
     }
@@ -52,6 +52,18 @@ public class Login_TestNG_Priority {
 
     @Test(priority = 2)
     public void verifyDashboard() {
+        //Nhập user name
+        WebElement userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='username']")));
+        WebElement pass = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='password']")));
+
+        //Nhập dữ liệu
+        userName.sendKeys("Admin");
+        pass.sendKeys("admin123");
+
+        //Click Submit Button Login
+        WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--main orangehrm-login-button']")));
+        loginButton.click();
+
 
         WebElement dashboard = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(

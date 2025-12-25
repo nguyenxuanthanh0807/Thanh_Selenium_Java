@@ -21,7 +21,7 @@ public class Login_TestNG_Group {
     @BeforeMethod(alwaysRun = true)
     public void setup(){
         driver = new ChromeDriver();
-        driver.manage().window();
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); //Truy cập tranh web
     }
@@ -75,7 +75,7 @@ public class Login_TestNG_Group {
 
         WebElement errorMsg = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(
-                        By.xpath("//p[contains(text(),'Invalid')]")
+                        By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
                 )
         );
 

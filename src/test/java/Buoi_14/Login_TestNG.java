@@ -22,7 +22,7 @@ public class Login_TestNG {
     @BeforeMethod
     public void setup(){
         driver = new ChromeDriver();
-        driver.manage().window();
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"); //Truy cập tranh web
     }
